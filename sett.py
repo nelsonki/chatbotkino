@@ -1,7 +1,7 @@
 
 token ='ubikteca'
-whatsapp_token = 'EAANIEX4HwNcBOwGv9ouMU6ZBcw1O1qoqGopyTXY8SnpK3NoPy7WQ1PbZB2gswqkL1K1kJSp9xkbGEnnJ7xAMMB8xigZBZBZAJbeuTWXmmpaANSZCrr9ZCR7kvZCZAMKs2IhZB3eImuPXVuraqywybHWA2sVlYmaq9eZAFUZCx40JrCcnkDFGfExn6qVlKjB2Icj6'
-whatsapp_url= 'https://graph.facebook.com/v18.0/266317303225066/messages'
+whatsapp_token = 'EAA1LQOfLRY8BOxNzmzkDfdF16YYyGh2YwZAnH9tNV1OTJ5rFuVZCcBBAI1iro00clmzgnZCLpk5wY62fbQDgyX9RhKb0lK8eNEp7OuJoxJu2KZCY0pD3MTGFOQjaj1osZBurFQ8M5E0m5j5L3osRixfGBJjBDRxu3pAZACvTEwetSsZBIWid17RM0PSwBSxY1UD'
+whatsapp_url= 'https://graph.facebook.com/v18.0/219906864548655/messages'
 
 stickers = {
     "poyo_feliz": 984778742532668,
