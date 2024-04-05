@@ -1,21 +1,22 @@
-# Usamos una imagen base de Python oficial. Puedes elegir la versión específica que necesites.
+# Usa una imagen base oficial de Python 3.
 FROM python:3.8-slim
 
-# Configuramos el directorio de trabajo dentro del contenedor
+# Configura el directorio de trabajo dentro del contenedor.
 WORKDIR /app
 
-# Copiamos el archivo de requerimientos primero para aprovechar la caché de capas de Docker
-COPY requirements.txt .
+# Variables de entorno.
+ENV PYTHONUNBUFFERED=true
 
-# Instalamos las dependencias del proyecto
+# Copia e instala los requisitos de dependencia.
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Ahora copiamos el resto de los archivos del proyecto al contenedor
+# Copia el resto de los archivos del proyecto en el contenedor.
 COPY . .
 
-# Exponemos el puerto en el que se ejecutará la aplicación
+# Expone el puerto en el que se ejecuta tu aplicación.
 EXPOSE 5000
 
-# Definimos el comando para ejecutar la aplicación
-# Reemplaza 'run.py' con el script que inicia tu aplicación de Flask
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Define el comando para ejecutar tu aplicación.
+# Reemplaza 'run.py' con el script que inicia tu aplicación Flask.
+CMD ["python3", "run.py"]
