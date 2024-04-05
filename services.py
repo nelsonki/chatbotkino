@@ -371,8 +371,15 @@ def administrar_chatbot(text,number, messageId, name):
         textMessage = text_Message(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. ¡Hasta luego! 😊")
         list.append(textMessage)
     else:
-        data = text_Message(number,"Lo siento, no entendí lo que dijiste. ¿Quieres que te ayude con alguna de estas opciones?")
-        list.append(data)
+        body = "Lo siento, no entendí lo que dijiste. ¿Puedes elegir alguna de estas opciones?"
+        footer = "Equipo Kino Táchira"
+        options = ["🔍 consultar", "💰 listines"]
+        replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
+        replyReaction = replyReaction_Message(number, messageId, "🫡")
+        list.append(replyReaction)
+        list.append(replyButtonData)        
+        #data = text_Message(number,"Lo siento, no entendí lo que dijiste. ¿Puedes elegir alguna de estas opciones?")
+        #list.append(data)
 
     for item in list:
         enviar_Mensaje_whatsapp(item)
