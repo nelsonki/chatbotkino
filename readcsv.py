@@ -13,8 +13,8 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
                 premios.append({
                    'sorteo': fields[0],
                    'serial': fields[1],
-                    'categoria': fields[2],
-                    'monto': fields[3], 
+                    'categoria': fields[4],
+                    'monto': fields[5], 
                 })
     if miSerial:
         output='' 
