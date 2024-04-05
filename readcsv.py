@@ -12,8 +12,8 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
                 fields = row.split('*')
                 
                 premios.append({
-                   'sorteo': fields[0].strip(0),
-                   'serial': fields[1].strip(0),
+                   'sorteo': fields[0].strip("0"),
+                   'serial': fields[1].strip("0"),
                     'categoria': fields[3],
                     'monto': fields[5], 
                 })
