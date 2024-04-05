@@ -26,6 +26,7 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
             if premio['serial'] == miSerial.strip("0") and premio['sorteo']== sorteoViene.strip("0"):
                 print(premio)
                 output += (f"Sorteo: {premio['sorteo']}, Categoría: {premio['categoria']}, Monto: {premio['monto']}, Serial: {premio['serial']}\n")
+                output += ("¡Felicitaciones, gracias por confiar en el Kino Táchira!")
         if(output):     
             return output
         else:
