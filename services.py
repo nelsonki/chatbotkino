@@ -268,7 +268,7 @@ def administrar_chatbot(text,number, messageId, name):
     elif "consultar" in text:
         body = "Tenemos varias sorteos en los que puedes consultar. ¿Selecciona un sorteo?"
         footer = "Equipo Kino Táchira"
-        options = ["sorteo-35", "sorteo-36", "sorteo-37"]
+        options = ["sorteo-35", "sorteo-36", "sorteo-41"]
 
         listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
         sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
@@ -276,7 +276,7 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(listReplyData)
         list.append(sticker)
 
-    elif "sorteo-35" in text or "sorteo-36" in text or "sorteo-37" in text:
+    elif "sorteo-35" in text or "sorteo-36" in text or "sorteo-41" in text:
         global miSorteo
         miSorteo = text
         print(miSorteo)
