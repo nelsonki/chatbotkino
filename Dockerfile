@@ -18,4 +18,4 @@ EXPOSE 5000
 
 # Definimos el comando para ejecutar la aplicación
 # Reemplaza 'run.py' con el script que inicia tu aplicación de Flask
-CMD ["python", "server.py"]
+CMD ["python", "run.py"]
