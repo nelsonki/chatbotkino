@@ -11,18 +11,18 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
             if row:
                 fields = row.split('*')
                 premios.append({
-                   'sorteo': fields[0],
-                   'serial': fields[1],
+                   'sorteo': int(fields[0]),
+                   'serial': int(fields[1]),
                     'categoria': fields[4],
-                    'monto': fields[5], 
+                    'monto': float(fields[5]), 
                 })
     if miSerial:
         output='' 
         arr = miSorteo.split('-')
         sorteoViene =arr[1]
         for premio in premios:
-            if premio['serial'] == miSerial and premio['sorteo']==sorteoViene:
-                #print(premio)
+            if premio['serial'] == int(miSerial) and premio['sorteo']== int(sorteoViene):
+                print(premio)
                 output += (f"Sorteo: {premio['sorteo']}, Categoría: {premio['categoria']}, Monto: {premio['monto']}, Serial: {premio['serial']}\n")
         if(output):     
             return output
