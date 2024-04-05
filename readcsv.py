@@ -23,7 +23,7 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
         arr = miSorteo.split('-')
         sorteoViene =arr[1]
         for premio in premios:
-            if premio['serial'] == miSerial and premio['sorteo']== sorteoViene:
+            if premio['serial'] == miSerial.strip("0") and premio['sorteo']== sorteoViene.strip("0"):
                 print(premio)
                 output += (f"Sorteo: {premio['sorteo']}, Categoría: {premio['categoria']}, Monto: {premio['monto']}, Serial: {premio['serial']}\n")
         if(output):     
