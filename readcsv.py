@@ -10,6 +10,7 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
         for row in rows:
             if row:
                 fields = row.split('*')
+                print(fields)
                 premios.append({
                    'sorteo': int(fields[0]),
                    'serial': int(fields[1]),
