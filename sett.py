@@ -1,6 +1,6 @@
 
 token ='ubikteca'
-whatsapp_token = 'EAA1LQOfLRY8BOxNzmzkDfdF16YYyGh2YwZAnH9tNV1OTJ5rFuVZCcBBAI1iro00clmzgnZCLpk5wY62fbQDgyX9RhKb0lK8eNEp7OuJoxJu2KZCY0pD3MTGFOQjaj1osZBurFQ8M5E0m5j5L3osRixfGBJjBDRxu3pAZACvTEwetSsZBIWid17RM0PSwBSxY1UD'
+whatsapp_token = 'EAAWbDD8IzrkBO2QpL7tnZAGlrsU69gdxNWDTwZCSnrTDwIfObWdOrZA1qWTwX121cWvfUOrOptn4BEv4HZBtEBqpGxFQiOt0Srgz8ZBvNw9IFak7PZC9EqXjs2JTjvcYIlLQpdZCmnajHUrxUnohkhNOligZCA3kHZB9OSQDZBc2SgmEUDCAUhSIHxJV2uflamz0zh'
 whatsapp_url= 'https://graph.facebook.com/v18.0/219906864548655/messages'
 
 stickers = {
