@@ -3,12 +3,13 @@ import urllib.request
 import io
 
 def read_csv_file(document_premios, miSerial=None, miSorteo=None):
-    print(document_premios)
     print(miSerial)
     print(miSorteo)
     premios = []
     with urllib.request.urlopen(document_premios) as csvfile:
         csvfile = io.StringIO(csvfile.read().decode('utf-8'))
+        row2s = csvfile.read()
+        print(row2s)
         rows = csvfile.read().split('\n')
         for row in rows:
             if row:
