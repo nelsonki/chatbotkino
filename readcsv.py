@@ -3,8 +3,6 @@ import urllib.request
 import io
 
 def read_csv_file(document_premios, miSerial=None, miSorteo=None):
-    print(miSerial)
-    print(miSorteo)
     premios = []
     with urllib.request.urlopen(document_premios) as csvfile:
         csvfile = io.StringIO(csvfile.read().decode('utf-8'))
@@ -12,23 +10,21 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
         for row in rows:
             if row:
                 fields = row.split('*')
+                
                 premios.append({
                    'sorteo': fields[0].strip("0"),
                    'serial': fields[1].strip("0"),
                     'categoria': fields[3],
                     'monto': fields[5], 
                 })
-              
-    if miSerial: 
-        print(premios)
-        print('si viene el serial')
+                print(premios)
+    if miSerial:
         output='' 
         arr = miSorteo.split('-')
         sorteoViene =arr[1]
         for premio in premios:
             if premio['serial'] == miSerial.strip("0") and premio['sorteo']== sorteoViene.strip("0"):
                 print(premio)
-                print('si imprime')
                 output += (f"Sorteo: {premio['sorteo']}, Categoría: {premio['categoria']}, Monto: {premio['monto']}, Serial: {premio['serial']}\n")
                 output += ("¡Felicitaciones, gracias por confiar en el Kino Táchira!")
         if(output):     
