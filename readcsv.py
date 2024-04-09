@@ -8,8 +8,6 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
     premios = []
     with urllib.request.urlopen(document_premios) as csvfile:
         csvfile = io.StringIO(csvfile.read().decode('utf-8'))
-        row2s = csvfile.read()
-        print(row2s)
         rows = csvfile.read().split('\n')
         for row in rows:
             if row:
@@ -29,6 +27,7 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
         for premio in premios:
             if premio['serial'] == miSerial.strip("0") and premio['sorteo']== sorteoViene.strip("0"):
                 print(premio)
+                print('si imprime')
                 output += (f"Sorteo: {premio['sorteo']}, Categoría: {premio['categoria']}, Monto: {premio['monto']}, Serial: {premio['serial']}\n")
                 output += ("¡Felicitaciones, gracias por confiar en el Kino Táchira!")
         if(output):     
