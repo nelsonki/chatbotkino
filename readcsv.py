@@ -13,15 +13,15 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
         for row in rows:
             if row:
                 fields = row.split('*')
-                print(fields)
                 premios.append({
                    'sorteo': fields[0].strip("0"),
                    'serial': fields[1].strip("0"),
                     'categoria': fields[3],
                     'monto': fields[5], 
                 })
-                print(premios)
-    if miSerial:
+              
+    if miSerial: 
+        print(premios)
         output='' 
         arr = miSorteo.split('-')
         sorteoViene =arr[1]
