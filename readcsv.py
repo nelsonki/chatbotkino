@@ -21,6 +21,7 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
               
     if miSerial: 
         print(premios)
+        print('si viene el serial')
         output='' 
         arr = miSorteo.split('-')
         sorteoViene =arr[1]
