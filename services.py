@@ -304,7 +304,7 @@ def administrar_chatbot(text,number, messageId, name):
    
     elif "descargar resultados" in text:
         body = "Selecciona"
-        footer = "Equipo Tecnilotto"
+        footer = "Equipo Kino Táchira"
         options = ["listin nuevo", "listin anterior"]
         listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
         sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
@@ -343,13 +343,14 @@ def administrar_chatbot(text,number, messageId, name):
 
     elif "sí, agenda reunión" in text :
         body = "Estupendo. Por favor, selecciona una fecha y hora para la reunión:"
-        footer = "Equipo Tecnilotto"
+        footer = "Equipo Kino Táchira"
         options = ["📅 10: mañana 10:00 AM", "📅 7 de junio, 2:00 PM", "📅 8 de junio, 4:00 PM"]
         listReply = listReply_Message(number, options, body, footer, "sed5",messageId)
         list.append(listReply)
+        
     elif "7 de junio, 2:00 pm" in text:
         body = "Excelente, has seleccionado la reunión para el 7 de junio a las 2:00 PM. Te enviaré un recordatorio un día antes. ¿Necesitas ayuda con algo más hoy?"
-        footer = "Equipo Tecnilotto"
+        footer = "Equipo Kino Táchira"
         options = ["✅ Sí, por favor", "❌ No, gracias."]
         buttonReply = buttonReply_Message(number, options, body, footer, "sed6",messageId)
         list.append(buttonReply)
@@ -357,6 +358,7 @@ def administrar_chatbot(text,number, messageId, name):
     elif "no, gracias." in text:
         textMessage = text_Message(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. ¡Hasta luego! 😊")
         list.append(textMessage)
+        
     else:
         body = "Lo siento, no entendí lo que dijiste. ¿Puedes elegir alguna de estas opciones?"
         footer = "Equipo Kino Táchira"
