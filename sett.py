@@ -19,6 +19,8 @@ stickers = {
     "gato_cansado": 1021308728970759
 }
 document_premios = "https://tukinotachira.com/system/loteriakino/backend/web/premios/premioswhatsapp.csv"
-document_url_nuevo = "https://tukinotachira.com/wp-content/uploads/2024/02/sorteo37-1-768x983.webp"
-document_url_medio = "https://tukinotachira.com/wp-content/uploads/2024/02/motos-768x960.webp"
+document_url_nuevo = "https://tukinotachira.com/system/loteriakino/backend/web/premios/resultados042.jpg"
+document_url_medio = "https://tukinotachira.com/system/loteriakino/backend/web/premios/resultados041.jpg"
 document_url_viejo = "https://tukinotachira.com/wp-content/uploads/2024/02/resuelve1-768x960.webp"
+document_url_prospecto = "https://tukinotachira.com/system/loteriakino/backend/web/premios/prospecto.jpg"
+
