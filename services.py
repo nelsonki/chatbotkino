@@ -258,7 +258,7 @@ def administrar_chatbot(text,number, messageId, name):
     if "hola" in text:
         body = "¡Hola! 👋 Bienvenido al Kino Táchira. ¿Cómo podemos ayudarte hoy?"
         footer = "Equipo Kino Táchira"
-        options = ["🔍 consultar sorteo", "descargar resultados", "💰 proximo sorteo"]
+        options = ["🔍 consultar sorteo", "📜 descargar resultados", "💰 proximo sorteo"]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
