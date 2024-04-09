@@ -14,8 +14,8 @@ def read_csv_file(document_premios, miSerial=None, miSorteo=None):
                 premios.append({
                    'sorteo': fields[0].strip("0"),
                    'serial': fields[1].strip("0"),
-                    'categoria': fields[3],
-                    'monto': fields[5], 
+                    'categoria': fields[2],
+                    'monto': fields[3], 
                 })
                 print(premios)
     if miSerial:
