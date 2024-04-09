@@ -362,7 +362,7 @@ def administrar_chatbot(text,number, messageId, name):
     else:
         body = "Lo siento, no entendí lo que dijiste. ¿Puedes elegir alguna de estas opciones?"
         footer = "Equipo Kino Táchira"
-        options = ["🔍 consultar", "💰 listines"]
+        options = ["🔍 consultar", "📜 descargar", "💰 premios"]
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
         list.append(replyReaction)
