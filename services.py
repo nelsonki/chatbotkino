@@ -258,17 +258,17 @@ def administrar_chatbot(text,number, messageId, name):
     if "hola" in text:
         body = "¡Hola! 👋 Bienvenido al Kino Táchira. ¿Cómo podemos ayudarte hoy?"
         footer = "Equipo Kino Táchira"
-        options = ["🔍 consultar", "💰 listines"]
+        options = ["🔍 consultar sorteo", "descargar resultados", "💰 proximo sorteo"]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
         list.append(replyReaction)
         list.append(replyButtonData)
 
-    elif "consultar" in text:
+    elif "consultar sorteo" in text:
         body = "Tenemos varias sorteos en los que puedes consultar. ¿Selecciona un sorteo?"
         footer = "Equipo Kino Táchira"
-        options = ["sorteo-35", "sorteo-36", "sorteo-41"]
+        options = ["sorteo-42", "sorteo-41"]
 
         listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
         sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
@@ -276,7 +276,7 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(listReplyData)
         list.append(sticker)
 
-    elif "sorteo-35" in text or "sorteo-36" in text or "sorteo-41" in text:
+    elif "sorteo-42" in text or "sorteo-41" in text:
         global miSorteo
         miSorteo = text
         print(miSorteo)
@@ -306,49 +306,42 @@ def administrar_chatbot(text,number, messageId, name):
  
  
   
-    elif "listines" in text:
+    elif "descargar resultados" in text:
         body = "Selecciona"
         footer = "Equipo Tecnilotto"
-        options = ["listin nuevo", "listin medio", "listin viejo"]
+        options = ["listin nuevo", "listin anterior"]
         listReplyData = listReply_Message(number, options, body, footer, "sed2",messageId)
         sticker = sticker_Message(number, get_media_id("perro_traje", "sticker"))
-
         list.append(listReplyData)
         list.append(sticker)
 
     elif "listin nuevo" in text:
         sticker = sticker_Message(number, get_media_id("pelfet", "sticker"))
         textMessage = text_Message(number,"Genial, por favor espera un momento...")
-
         enviar_Mensaje_whatsapp(sticker)
         enviar_Mensaje_whatsapp(textMessage)
-        time.sleep(1)
-
+        #time.sleep(1)
         document = document_Message(number, sett.document_url_nuevo, "Listo 👍🏻", "listin")
         enviar_Mensaje_whatsapp(document)
         time.sleep(1)
 
-    elif "listin medio" in text:
+    elif "listin anterior" in text:
         sticker = sticker_Message(number, get_media_id("pelfet", "sticker"))
         textMessage = text_Message(number,"Genial, por favor espera un momento...")
-
         enviar_Mensaje_whatsapp(sticker)
         enviar_Mensaje_whatsapp(textMessage)
-        time.sleep(1)
-
+        #time.sleep(1)
         document = document_Message(number, sett.document_url_medio, "Listo 👍🏻", "listin")
         enviar_Mensaje_whatsapp(document)
         time.sleep(1)
 
-    elif "listin viejo" in text:
+    elif "proximo sorteo" in text:
         sticker = sticker_Message(number, get_media_id("pelfet", "sticker"))
         textMessage = text_Message(number,"Genial, por favor espera un momento...")
-
         enviar_Mensaje_whatsapp(sticker)
         enviar_Mensaje_whatsapp(textMessage)
-        time.sleep(1)
-
-        document = document_Message(number, sett.document_url_viejo, "Listo 👍🏻", "listin")
+        #time.sleep(1)
+        document = document_Message(number, sett.document_url_prospecto, "Listo 👍🏻", "listin")
         enviar_Mensaje_whatsapp(document)
         time.sleep(1)
 
@@ -356,17 +349,15 @@ def administrar_chatbot(text,number, messageId, name):
         body = "Estupendo. Por favor, selecciona una fecha y hora para la reunión:"
         footer = "Equipo Tecnilotto"
         options = ["📅 10: mañana 10:00 AM", "📅 7 de junio, 2:00 PM", "📅 8 de junio, 4:00 PM"]
-
         listReply = listReply_Message(number, options, body, footer, "sed5",messageId)
         list.append(listReply)
     elif "7 de junio, 2:00 pm" in text:
         body = "Excelente, has seleccionado la reunión para el 7 de junio a las 2:00 PM. Te enviaré un recordatorio un día antes. ¿Necesitas ayuda con algo más hoy?"
         footer = "Equipo Tecnilotto"
         options = ["✅ Sí, por favor", "❌ No, gracias."]
-
-
         buttonReply = buttonReply_Message(number, options, body, footer, "sed6",messageId)
         list.append(buttonReply)
+        
     elif "no, gracias." in text:
         textMessage = text_Message(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. ¡Hasta luego! 😊")
         list.append(textMessage)
