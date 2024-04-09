@@ -258,14 +258,14 @@ def administrar_chatbot(text,number, messageId, name):
     if "hola" in text:
         body = "¡Hola! 👋 Bienvenido al Kino Táchira. ¿Cómo podemos ayudarte hoy?"
         footer = "Equipo Kino Táchira"
-        options = ["🔍 consultar sorteo", "📜 descargar resultados", "💰 proximos premios"]
+        options = ["🔍 consultar", "📜 descargar", "💰 premios"]
 
         replyButtonData = buttonReply_Message(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Message(number, messageId, "🫡")
         list.append(replyReaction)
         list.append(replyButtonData)
 
-    elif "consultar sorteo" in text:
+    elif "consultar" in text:
         body = "Tenemos varias sorteos en los que puedes consultar. ¿Selecciona un sorteo?"
         footer = "Equipo Kino Táchira"
         options = ["sorteo-42", "sorteo-41"]
@@ -302,7 +302,7 @@ def administrar_chatbot(text,number, messageId, name):
         enviar_Mensaje_whatsapp(sticker)
         enviar_Mensaje_whatsapp(textMessageData)
    
-    elif "descargar resultados" in text:
+    elif "descargar" in text:
         body = "Selecciona"
         footer = "Equipo Kino Táchira"
         options = ["listin nuevo", "listin anterior"]
@@ -331,7 +331,7 @@ def administrar_chatbot(text,number, messageId, name):
         enviar_Mensaje_whatsapp(document)
         time.sleep(1)
 
-    elif "proximos premios" in text:
+    elif "premios" in text:
         sticker = sticker_Message(number, get_media_id("pelfet", "sticker"))
         textMessage = text_Message(number,"Genial, por favor espera un momento...")
         enviar_Mensaje_whatsapp(sticker)
