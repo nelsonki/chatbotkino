@@ -290,9 +290,7 @@ def administrar_chatbot(text,number, messageId, name):
         #textMessageData = text_Message(number, data)
         enviar_Mensaje_whatsapp(textMessage)
         #enviar_Mensaje_whatsapp(sticker)
-        #enviar_Mensaje_whatsapp(textMessage)
- 
-
+        #enviar_Mensaje_whatsapp(textMessage) 
 
     elif text.isdigit():
         print(miSorteo)
@@ -303,9 +301,7 @@ def administrar_chatbot(text,number, messageId, name):
         #textMessage = text_Message(number,"", readcsv.read_csv_file(sett.document_premios), text)
         enviar_Mensaje_whatsapp(sticker)
         enviar_Mensaje_whatsapp(textMessageData)
- 
- 
-  
+   
     elif "descargar resultados" in text:
         body = "Selecciona"
         footer = "Equipo Tecnilotto"
